@@ -1,0 +1,44 @@
+{%- macro infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id) -%}
+{%- if Image == 'NaN' -%}
+    {%- set Image = '' -%}
+{%- endif -%}
+{%- if DOB == 'NaN' -%}
+    {%- set DOB = ''-%}
+{%- endif -%}
+{%- if citizenship == 'NaN' -%}
+    {%- set citizenship= ''-%}
+{%- endif -%}
+{%- if event== 'NaN' -%}
+    {%- set event= ''-%}
+{%- endif -%}
+{{'{{Infobox '}}
+| label0 = లోగో
+| data0 = {{image}}
+| label1 = స్పీకర్  పేరు 
+| data1 = {{speaker__name}}
+| label2 = పుట్టిన తేదీ  
+| data2 = {{DOB}}
+| label3 = లింగం 
+| data3 = {{Gender}}
+| label4 = పౌరసత్వం 
+| data4 = {{citizenship}}
+| label5 = టాక్ ఐడి 
+| data5 = {{talk__id}}
+| label6 = టాక్ పేరు 
+| data6	= {{talk__name}}
+| label7 = టాక్ సారాంశం   
+| data7	= {{talk__description}}
+| label8 = టాక్ గడువు 
+| data8	= {{duration}}
+| label9 = టాక్ రకం 
+| data9 = {{video_type_name}}
+| label10 = టాక్ సన్నివేశం
+| data10 = {{event}} 
+| label11 =స్పీకర్ ఐడి 
+| data11 = {{speaker__id}}
+{{'}}\n'}}
+{%- endmacro -%}
+
+
+{{- infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id) }}
+

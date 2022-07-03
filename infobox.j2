@@ -1,0 +1,54 @@
+{%- macro
+infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id)
+-%}
+
+
+{{'{{Infobox TedSpeaker'}}
+| name = {{speaker__name}}
+{%- if Image!= 'NaN' %}
+| logo = {{image}}
+{%- endif %}
+{%- if speaker__name!= 'NaN' %}
+| name = {{speaker__name}}
+{%- endif %}
+{% if DOB != 'NaN' %}
+| dob = {{DOB}}
+{%- endif %}
+{% if Gender!= 'NaN' %}
+| Gender= {{Gender}}
+{%- endif %}
+
+
+{%- if citizenship!= 'NaN' %}
+| citizenship = {{citizenship}}
+{%- endif %}
+{%- if talk__id!= 'NaN' %}
+| talk__id = {{,talk__id}}
+{%- endif %}
+{%- if talk__name!= 'NaN' %}
+| talk__name= {{talk__name}}
+{%- endif %}
+{%- if talk__description != 'NaN' %}
+| talk__description ={{talk__description}}
+{%- endif %}
+{%- if duration!= 'NaN' %}
+| duration={{duration}}
+{%- endif %}
+{%- if video_type_name!= 'NaN' %}
+| video_type_name={{video_type_name}}
+{%- endif %}
+{%- ifevent!= 'NaN' %}
+|event={{event}}
+{%- endif %}
+
+{%- if speaker__id!= 'NaN' %}
+| speaker__id={{speaker__id}}
+{%- endif %}
+
+{{'}}\n'}}
+{%- endmacro -%}
+
+
+{{-
+infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id)
+}}

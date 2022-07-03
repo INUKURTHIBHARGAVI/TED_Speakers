@@ -1,0 +1,132 @@
+{%- macro infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id) -%}
+
+
+{{'{{Infobox TedSpeaker'}}
+| name = {{speaker__name}}
+{%- if Image!= 'NaN' %}
+| logo = {{image}}
+{%- endif %}
+{%- if speaker__name!= 'NaN' %}
+| name = {{speaker__name}}
+{%- endif %}
+{% if DOB != 'NaN' %}
+| dob = {{DOB}}
+{%- endif %}
+{% if Gender!= 'NaN' %}
+| Gender= {{Gender}}
+{%- endif %}
+
+
+{%- if citizenship!= 'NaN' %}
+| citizenship = {{citizenship}}
+{%- endif %}
+{%- if talk__id!= 'NaN' %}
+| talk__id = {{,talk__id}}
+{%- endif %}
+{%- if talk__name!= 'NaN' %}
+| talk__name= {{talk__name}}
+{%- endif %}
+{%- if talk__description != 'NaN' %}
+| talk__description ={{talk__description}}
+{%- endif %}
+{%- if duration!= 'NaN' %}
+| duration={{duration}}
+{%- endif %}
+{%- if video_type_name!= 'NaN' %}
+| video_type_name={{video_type_name}}
+{%- endif %}
+{%- ifevent!= 'NaN' %}
+|event={{event}}
+{%- endif %}
+
+{%- if speaker__id!= 'NaN' %}
+| speaker__id={{speaker__id}}
+{%- endif %}
+
+{{'}}\n'}}
+{%- endmacro -%}
+
+
+{%- macro infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id) -%}
+	
+
+    {%- if speaker__name!='NaN' %}
+        {%- set into_line=[ speaker__name +”ప్రముఖ TED స్పీకర్  ",
+       #write 2nd sentence here
+        ] | random
+        -%}
+    {{into_line}}
+    {%- else %}
+	{%- set into_line=[ speaker__name +”ప్రముఖ TED స్పీకర్  ",
+       #write 2nd sentence here
+        ] | random
+        -%}
+   {{into_line}}
+    {%- endif %}
+{%- if speaker__id!='NaN' %}
+        {%- set into_line=[ speaker__name +”యొక్క  TED స్పీకర్ ఐడి: +speaker_id  ",
+       #write 2nd sentence here
+        ] | random
+        -%}
+       {%- endif %}
+     {%- if DOB!= 'NaN' %}
+        {%- set state_line=[ speaker__name+DOB+" న " +"జన్మించారు . ",
+",""+speaker__name+" జన్మించిన తేదీ"+DOB.] | random
+        -%}
+       {%- endif %}
+
+     {%- if citizenship!= 'NaN' %}
+        {%- set state_line=[ speaker__name+citizenship+"దేశానికి చెందినవారు. ",
+",""+speaker__name+citizenship+"పౌరసత్వం "+DOB.] | random
+        -%}
+       {%- endif %}
+
+ {%- if talk__id!= 'NaN' %}
+        {%- set state_line=[“ ఆయన యొక్క టాక్  ఐడి”+ talk__id,
+",""+ talk__id+ఆయన యొక్క టాక్  ఐడి”] | random
+        -%}
+ {%- endif %}
+      
+ {%- if talk__name!= 'NaN' %}
+        {%- set state_line=[“ ఆయన యొక్క టాక్  పేరు ”+ talk__name,
+",""+talk__name+ఆయన యొక్క టాక్ పేరు ”] | random
+        -%}
+ {%- endif %}
+      
+ {%- if talk__description!= 'NaN' %}
+        {%- set state_line=[ talk__name+“ యొక్క సారాంశం  ”+talk__description,
+",""+talk__description+”ఈ టాక్ యొక్క సారాంశం ”] | random
+        -%}
+ {%- endif %}
+
+
+ {%- if duration!= 'NaN' %}
+        {%- set state_line=[“ఈ ప్రసంగం యొక్క వ్యవధి” + duration,
+] | random
+        -%}
+ {%- endif %}
+
+
+ {%- if video_type_name!= 'NaN' %}
+        {%- set state_line=[ “ఈ ప్రసంగం”+video_type_name+ “లో ఇవ్వబడింది."] | random
+        -%}
+ {%- endif %}
+
+ {%- if event!= 'NaN' %}
+        {%- set state_line=[“ఈ ప్రసంగం”+event+“సన్నివేశంలో ఇవ్వబడింది.”
+] | random
+        -%}
+ {%- endif %}
+
+
+
+   
+
+
+{%- endmacro -%} 
+
+
+
+{{- infobox(Image,speaker__name,DOB,Gender,citizenship,talk__id,talk__name,talk__description,duration,video_type_name,event,speaker__id) }}
+{{'\n'}}
+
